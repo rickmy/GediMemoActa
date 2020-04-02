@@ -49,7 +49,7 @@
               <div class="row">
                 <div class="col-md-12" *ngFor="let o of acta.ordenDelDia; let i=index">
                   <div class="form-group">
-                    <input type="text" class="form-control" name="orden{{i}}" [(ngModel)]="o.value"
+                    <input type="text" class="form-control" name="orden{{i}}" [(ngModel)]="o.orden"
                      #Orden="ngModel" placeholder="Orden del dia"  required>
                   </div>
                 </div>

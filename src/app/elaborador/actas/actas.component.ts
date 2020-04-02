@@ -54,22 +54,18 @@ export class ActasComponent implements OnInit {
           style: 'subTitulo'
         },
         {
-          columns : [
-            {
-              ul : [
-                ...this.acta.ordenDelDia.filter((orden, index) => index % 3 === 0).map(o => o.orden)
-              ]
-            },
-            {
-              ul : [
-                ...this.acta.ordenDelDia.filter((orden, index) => index % 3 === 1).map(o => o.orden)
-              ]
-            },
-            {
-              ul : [
-                ...this.acta.ordenDelDia.filter((orden, index) => index % 3 === 2).map(o => o.orden)
-              ]
-            }
+          ul : [
+            ...this.acta.ordenDelDia.filter((orden, index) => index % 3 === 0).map(o => o.orden)
+          ]
+        },
+        {
+          ul : [
+            ...this.acta.ordenDelDia.filter((orden, index) => index % 3 === 1).map(o => o.orden)
+          ]
+        },
+        {
+          ul : [
+            ...this.acta.ordenDelDia.filter((orden, index) => index % 3 === 2).map(o => o.orden)
           ]
         },
         {
@@ -106,8 +102,7 @@ export class ActasComponent implements OnInit {
           subTitulo: {
             fontSize: 13,
             bold: true,
-            margin: [5, 20, 5, 20],
-            textTransform : 'uppercase'
+            margin: [5, 10, 5, 10]
           },
           cabecera: {
             fontSize: 12,
