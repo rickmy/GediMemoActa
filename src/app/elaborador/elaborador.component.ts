@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { Resume, Experience, Education, Skill } from '../models/resume';
+import { Resume, Experience, Education, Skill } from '../models/resume'
+
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -12,6 +13,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 export class ElaboradorComponent implements OnInit {
 
   resume = new Resume();
+
   degrees = ['Básico', 'Inicial','Bachillerato', 'Estudios Superiores'];
 
   constructor() { 
@@ -28,9 +30,11 @@ export class ElaboradorComponent implements OnInit {
       this.resume.skills = [];
       this.resume.skills.push(new Skill());
     }
+
+    
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   agregarMensaje(){
@@ -274,4 +278,5 @@ export class ElaboradorComponent implements OnInit {
   addSkill() {
     this.resume.skills.push(new Skill());
   }
+
 }

@@ -7,13 +7,17 @@ import { VisualizadorComponent } from './visualizador/visualizador.component';
 import { ElaboradorComponent } from './elaborador/elaborador.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MemorandumsComponent } from './elaborador/memorandums/memorandums.component';
+import { ActasComponent } from './elaborador/actas/actas.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     VisualizadorComponent,
-    ElaboradorComponent
+    ElaboradorComponent,
+    MemorandumsComponent,
+    ActasComponent
   ],
   imports: [
     BrowserModule,
