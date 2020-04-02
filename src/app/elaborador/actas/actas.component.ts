@@ -46,6 +46,10 @@ export class ActasComponent implements OnInit {
           style : 'titulo'
         },
         {
+          text: 'ACTA NO 2-2019-ISTBJ',
+          style : 'titulo'
+        },
+        {
           text: this.acta.inicio,
           style: 'body'
         },
