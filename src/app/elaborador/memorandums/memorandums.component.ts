@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Memorandums} from 'src/app/models/memorandums';
 import pdfMake from 'pdfmake/build/pdfmake';
+<<<<<<< HEAD
 import { DatePipe } from '@angular/common'
+=======
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
 
 @Component({
   selector: 'app-memorandums',
@@ -10,6 +13,7 @@ import { DatePipe } from '@angular/common'
 })
 export class MemorandumsComponent implements OnInit {
 
+<<<<<<< HEAD
   memo = new Memorandums();
   date: any;
   keyword = 'nombre'
@@ -26,10 +30,18 @@ export class MemorandumsComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerFecha()
+=======
+  memo = new Memorandums()
+
+  constructor() { }
+
+  ngOnInit(): void {
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
   }
 
   //metodos  a usar
 
+<<<<<<< HEAD
   selectEvent(item) {
     this.memo.para = item.nombre 
     console.log(this.memo.para)
@@ -40,21 +52,28 @@ export class MemorandumsComponent implements OnInit {
     this.date = this.datepipe.transform(this.date, 'yyyy-MM-dd');
     return this.date;
   }
+=======
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
 
   getDocumentDefinition() {
     sessionStorage.setItem('memo', JSON.stringify(this.memo));
     return {
       content: [
         {
+<<<<<<< HEAD
           image: ''
           ,fit: [50, 50]
         },
         {
           text: 'Instituto Superior Tecnológico de Turismo y Patrimonio Yavirac',
+=======
+          text: 'Instituto el cual pertenece el usuario',
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
           
           style : 'titulo'
         },
         {
+<<<<<<< HEAD
           text: `MEMORANDUM  `,
           style : 'titulo'
         },
@@ -63,6 +82,11 @@ export class MemorandumsComponent implements OnInit {
           style : 'titulo'
         },
         
+=======
+          text: `MEMORANDUM "ISTBJ-DS-001-2020" `,
+          style : 'titulo'
+        },
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
         {
           columns: [
             [
@@ -79,7 +103,11 @@ export class MemorandumsComponent implements OnInit {
               style: 'cabecera'
             },
             {
+<<<<<<< HEAD
               text: `Fecha: ${this.date}`,
+=======
+              text: `Fecha: ${this.memo.fecha}`,
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
               style: 'cabecera'
             }
             ]
@@ -111,7 +139,11 @@ export class MemorandumsComponent implements OnInit {
       ],
         styles: {
           titulo: {
+<<<<<<< HEAD
             fontSize: 12,
+=======
+            fontSize: 14,
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
             bold: true,
             margin: [0, 20, 0, 20],
             upperCase: true ,
@@ -154,4 +186,8 @@ export class MemorandumsComponent implements OnInit {
     this.memo = new Memorandums();
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f

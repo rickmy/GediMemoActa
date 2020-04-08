@@ -12,8 +12,11 @@ export class ActasComponent implements OnInit {
   acta = new Actas();
 
   constructor() {
+<<<<<<< HEAD
 
     
+=======
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
     this.acta = JSON.parse(sessionStorage.getItem('acta')) || new Actas();
     if (!this.acta.ordenDelDia || this.acta.ordenDelDia.length === 0) {
       this.acta.ordenDelDia = [];
@@ -143,4 +146,8 @@ export class ActasComponent implements OnInit {
     }
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f

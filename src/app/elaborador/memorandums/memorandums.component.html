@@ -1,6 +1,10 @@
 <div class="container-fluid">
     <nav class="navbar navbar-expand navbar-light bg-primary d-flex justify-content-between">
+<<<<<<< HEAD
       <div class="navbar-brand mb-0 h1 text-white">MEMORÁNDUM - YAVIRAC</div>
+=======
+      <div class="navbar-brand mb-0 h1 text-white">Memorandums - YAVIRAC</div>
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
     </nav>
     <form #memoForm="ngForm">
       <div class="row">
@@ -10,6 +14,7 @@
               <h4 class="card-title d-flex">
                 Para:
               </h4>
+<<<<<<< HEAD
                   <ng-autocomplete 
                     [data]="listaDocentes"
                     [searchKeyword]="keyword"
@@ -25,14 +30,31 @@
                   <a [innerHTML]="item.nombre"  ></a>
                   </ng-template>
                   
+=======
+              <input type="text" class="form-control" [(ngModel)]="memo.para" 
+              name="para" #Para="ngModel" required placeholder="Nombre"
+              >
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
             </div>
             <div class="card-body">
               <h4 class="card-title d-flex">
                 Asunto:
               </h4>
               <input type="text" class="form-control" [(ngModel)]="memo.asunto" 
+<<<<<<< HEAD
               name="asunto" #Asunto="ngModel" required placeholder="Descripción"
               [ngClass]="{'is-invalid': Asunto.invalid && (Asunto.touched || memoForm.submitted) }">
+=======
+              name="asunto" #Asunto="ngModel" required placeholder="Descripción">
+            </div>
+            <div class="card-body">
+              <h4 class="card-title d-flex">
+                Fecha:
+              </h4>
+              <input type="date" class="form-control" [(ngModel)]="memo.fecha" 
+              name="fecha" #Fecha="ngModel" required placeholder="01/01/1990">
+            
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
             </div>
           </div>
           <!-- cuerpo -->
@@ -49,9 +71,13 @@
                 <div class="col-md-12" >
                   <div class="form-group">
                     <textarea class="form-control" name="cuerpo" [(ngModel)]="memo.cuerpo" #Cuerpo="ngModel" required rows="8"
+<<<<<<< HEAD
                         placeholder="Desarrollo del documento" 
                         [ngClass]="{'is-invalid': Cuerpo.invalid && (Cuerpo.touched || memoForm.submitted) }">
                       </textarea>
+=======
+                        placeholder="Desarrollo del documento" ></textarea>
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
                   </div>
                 </div>
               </div>
@@ -71,8 +97,12 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <input type="text" class="form-control" name="despedida" [(ngModel)]="memo.despedida" #Despedida="ngModel"
+<<<<<<< HEAD
                       value="saludos Cordiales," required
                       [ngClass]="{'is-invalid': Despedida.invalid && (Despedida.touched || memoForm.submitted) }">
+=======
+                      value="saludos Cordiales," required>
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
                   </div>
                 </div>
               </div>

@@ -8,6 +8,7 @@ import { ElaboradorComponent } from './elaborador/elaborador.component';
 import { LoginComponent } from "./login/login.component";
 import { RegistrationComponent } from './registration/registration.component';
 import { HttpClientModule} from '@angular/common/http';
+<<<<<<< HEAD
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NbThemeModule } from '@nebular/theme';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,6 +28,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import { ActasReunionesComponent } from './elaborador/actas-reuniones/actas-reuniones.component';
+=======
+import { FormsModule } from '@angular/forms';
+import { MemorandumsComponent } from './elaborador/memorandums/memorandums.component';
+import { ActasComponent } from './elaborador/actas/actas.component';
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
 
 
 @NgModule({
@@ -34,6 +40,7 @@ import { ActasReunionesComponent } from './elaborador/actas-reuniones/actas-reun
     AppComponent,
     VisualizadorComponent,
     ElaboradorComponent,
+<<<<<<< HEAD
     LoginComponent,
     RegistrationComponent,
     NavbarComponent,
@@ -43,6 +50,10 @@ import { ActasReunionesComponent } from './elaborador/actas-reuniones/actas-reun
     SolicitudesComponent,
     HojaDeVidaComponent,
     ActasReunionesComponent
+=======
+    MemorandumsComponent,
+    ActasComponent
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
   ],
   imports: [
     BrowserModule,
