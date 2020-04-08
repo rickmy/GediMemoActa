@@ -10,9 +10,21 @@
               <h4 class="card-title d-flex">
                 Para:
               </h4>
-              <input type="text" class="form-control" [(ngModel)]="memo.para" 
-              name="para" #Para="ngModel" placeholder="Nombre"
-              [ngClass]="{'is-invalid': Para.invalid && (Para.touched || memoForm.submitted) }" required>
+                  <ng-autocomplete 
+                    [data]="listaDocentes"
+                    [searchKeyword]="keyword"
+                    [itemTemplate]="itemTemplate"
+                    placeholder="Nombre"
+                    (selected)='selectEvent($event)'
+                    class="form-control"
+                    > 
+                                                
+                  </ng-autocomplete>
+                  
+                  <ng-template #itemTemplate let-item>
+                  <a [innerHTML]="item.nombre"  ></a>
+                  </ng-template>
+                  
             </div>
             <div class="card-body">
               <h4 class="card-title d-flex">
@@ -21,15 +33,6 @@
               <input type="text" class="form-control" [(ngModel)]="memo.asunto" 
               name="asunto" #Asunto="ngModel" required placeholder="Descripción"
               [ngClass]="{'is-invalid': Asunto.invalid && (Asunto.touched || memoForm.submitted) }">
-            </div>
-            <div class="card-body">
-              <h4 class="card-title d-flex">
-                Fecha:
-              </h4>
-              <input type="date" class="form-control" [(ngModel)]="memo.fecha" 
-              name="fecha" #Fecha="ngModel" required placeholder="01/01/1990"
-              [ngClass]="{'is-invalid': Fecha.invalid && (Fecha.touched || memoForm.submitted) }">
-            
             </div>
           </div>
           <!-- cuerpo -->

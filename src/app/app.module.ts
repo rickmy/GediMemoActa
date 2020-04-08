@@ -25,6 +25,8 @@ import { SolicitudesComponent } from './elaborador/solicitudes/solicitudes.compo
 import { HojaDeVidaComponent } from './elaborador/hoja-de-vida/hoja-de-vida.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { ActasReunionesComponent } from './elaborador/actas-reuniones/actas-reuniones.component';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { MatSelectModule } from '@angular/material/select';
     MemorandumsComponent,
     OficiosComponent,
     SolicitudesComponent,
-    HojaDeVidaComponent
+    HojaDeVidaComponent,
+    ActasReunionesComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AutocompleteLibModule
   ],
   providers: [ServicioService, DatePipe],
   bootstrap: [AppComponent],
