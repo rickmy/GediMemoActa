@@ -28,7 +28,6 @@
                             [data]="listaDocentes"
                             [searchKeyword]="keyword"
                             [itemTemplate]="itemTemplate"
-                            placeholder="Nombre"
                             (selected)='selectCoordinador($event)'
                         > 
                                                         
@@ -40,7 +39,6 @@
                         [data]="listaDocentes"
                         [searchKeyword]="keyword"
                         [itemTemplate]="itemTemplate"
-                        placeholder="Nombre"
                         (selected)='selectSecretaria($event)'
                         > 
                                                     
@@ -74,14 +72,13 @@
                     [data]="listaDocentes"
                     [searchKeyword]="keyword"
                     [itemTemplate]="itemTemplate"
-                    placeholder="Nombre"
                     (selected)='selectInvolucrados($event)'
                     > 
                                                 
                   </ng-autocomplete>
                   
                   <ng-template #itemTemplate let-item>
-                  <a [innerHTML]="item.nombre"  ></a>
+                  <a [innerHTML]="item.name"  ></a>
                   </ng-template>
                     </div>
                 </div>
@@ -150,7 +147,6 @@
                     [data]="listaDocentes"
                     [searchKeyword]="keyword"
                     [itemTemplate]="itemTemplate"
-                    placeholder="Nombre"
                     (selected)='selectRevisado($event)'
                     > 
                                                 
@@ -178,7 +174,6 @@
                       [data]="listaDocentes"
                       [searchKeyword]="keyword"
                       [itemTemplate]="itemTemplate"
-                      placeholder="Nombre"
                       (selected)='selectAprobadoUno($event)'
                       > 
                                                   
@@ -197,7 +192,6 @@
                         [data]="listaDocentes"
                         [searchKeyword]="keyword"
                         [itemTemplate]="itemTemplate"
-                        placeholder="Nombre"
                         (selected)='selectAprobadoDos($event)'
                         > 
                                                     
@@ -216,7 +210,6 @@
                         [data]="listaDocentes"
                         [searchKeyword]="keyword"
                         [itemTemplate]="itemTemplate"
-                        placeholder="Nombre"
                         (selected)='selectAprobadoTres($event)'
                         > 
                                                     
@@ -235,7 +228,6 @@
                         [data]="listaDocentes"
                         [searchKeyword]="keyword"
                         [itemTemplate]="itemTemplate"
-                        placeholder="Nombre"
                         (selected)='selectAprobadoCuatro($event)'
                         > 
                                                     

@@ -45,10 +45,10 @@ export class MemorandumsComponent implements OnInit {
     sessionStorage.setItem('memo', JSON.stringify(this.memo));
     return {
       content: [
-        {
+       /*  {
           image: ''
           ,fit: [50, 50]
-        },
+        } */,
         {
           text: 'Instituto Superior Tecnológico de Turismo y Patrimonio Yavirac',
           

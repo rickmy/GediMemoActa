@@ -243,26 +243,26 @@ export class ActasReunionesComponent implements OnInit {
   }
 
   selectInvolucrados(item) {
-    this.listaInvolucrados.push(item.name)
+    this.listaInvolucrados.push(item)
     console.log('listaInvolucrados_:',this.listaInvolucrados)
   }
 
   selectRevisado(item){
-    this.reunion.revisado = item.nombre 
+    this.reunion.revisado = item.name 
   }
 
   selectAprobadoUno(item){
-    this.reunion.aprobadoUno = item.nombre
+    this.reunion.aprobadoUno = item.name
   }
 
   selectAprobadoDos(item){
-    this.reunion.aprobadoDos = item.nombre
+    this.reunion.aprobadoDos = item.name
   }
   selectAprobadoTres(item){
-    this.reunion.aprobadoTres = item.nombre
+    this.reunion.aprobadoTres = item.name
   }
   selectAprobadoCuatro(item){
-    this.reunion.aprobadoCuatro = item.nombre
+    this.reunion.aprobadoCuatro = item.name
   }
 
   agregarOrden () {
@@ -276,6 +276,7 @@ export class ActasReunionesComponent implements OnInit {
   resetForm() {
     this.reunion = new ActasReuniones();
     sessionStorage.removeItem('acta-reunion');
+    this.listaInvolucrados = []
   }
 
   getDocumentDefinition() {
