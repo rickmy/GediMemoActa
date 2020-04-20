@@ -8,6 +8,7 @@ import { ElaboradorComponent } from './elaborador/elaborador.component';
 import { LoginComponent } from "./login/login.component";
 import { RegistrationComponent } from './registration/registration.component';
 import { HttpClientModule} from '@angular/common/http';
+<<<<<<< HEAD
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NbThemeModule } from '@nebular/theme';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,6 +27,7 @@ import { SolicitudesComponent } from './elaborador/solicitudes/solicitudes.compo
 import { HojaDeVidaComponent } from './elaborador/hoja-de-vida/hoja-de-vida.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+<<<<<<< HEAD
 import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from "@angular/material/icon";
 import { ActasReunionesComponent } from './elaborador/actas-reuniones/actas-reuniones.component';
@@ -45,11 +47,23 @@ import { MatSortModule } from "@angular/material/sort";
 import { CardsComponent } from './visualizador/cards/cards.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MatCardModule} from  '@angular/material/card';
+=======
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { ActasReunionesComponent } from './elaborador/actas-reuniones/actas-reuniones.component';
+=======
+import { FormsModule } from '@angular/forms';
+import { MemorandumsComponent } from './elaborador/memorandums/memorandums.component';
+import { ActasComponent } from './elaborador/actas/actas.component';
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
+
+
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
 @NgModule({
   declarations: [
     AppComponent,
     VisualizadorComponent,
     ElaboradorComponent,
+<<<<<<< HEAD
     LoginComponent,
     RegistrationComponent,
     NavbarComponent,
@@ -58,12 +72,20 @@ import { MatCardModule} from  '@angular/material/card';
     OficiosComponent,
     SolicitudesComponent,
     HojaDeVidaComponent,
+<<<<<<< HEAD
     ActasReunionesComponent,
     SolicitudesTitulacionComponent,
     GestionUsuariosComponent,
     AccesoDenegadoComponent,
     ModalComponent,
     CardsComponent
+=======
+    ActasReunionesComponent
+=======
+    MemorandumsComponent,
+    ActasComponent
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
   ],
   imports: [
     BrowserModule,
@@ -81,6 +103,7 @@ import { MatCardModule} from  '@angular/material/card';
     MatMenuModule,
     MatIconModule,
     MatFormFieldModule,
+<<<<<<< HEAD
     MatTableModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
@@ -96,6 +119,10 @@ import { MatCardModule} from  '@angular/material/card';
   ],
   entryComponents: [
     ModalComponent
+=======
+    BrowserAnimationsModule,
+    AutocompleteLibModule
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
   ],
   providers: [ServicioService, DatePipe],
   bootstrap: [AppComponent]

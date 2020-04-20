@@ -22,6 +22,7 @@ export class Experience {
     startDate: string;
     experience: number;
 }
+
 export class Education {
     degree: string;
     college: string;

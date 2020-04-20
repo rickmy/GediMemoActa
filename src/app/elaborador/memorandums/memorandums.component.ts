@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Memorandums} from 'src/app/models/memorandums';
 import pdfMake from 'pdfmake/build/pdfmake';
+<<<<<<< HEAD
 import { DatePipe } from '@angular/common'
+=======
+<<<<<<< HEAD
+import { DatePipe } from '@angular/common'
+=======
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
 
 @Component({
   selector: 'app-memorandums',
@@ -10,6 +17,10 @@ import { DatePipe } from '@angular/common'
 })
 export class MemorandumsComponent implements OnInit {
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
   memo = new Memorandums();
   date: any;
   keyword = 'nombre'
@@ -26,10 +37,24 @@ export class MemorandumsComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerFecha()
+<<<<<<< HEAD
+=======
+=======
+  memo = new Memorandums()
+
+  constructor() { }
+
+  ngOnInit(): void {
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
   }
 
   //metodos  a usar
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
   selectEvent(item) {
     this.memo.para = item.nombre 
     console.log(this.memo.para)
@@ -40,6 +65,11 @@ export class MemorandumsComponent implements OnInit {
     this.date = this.datepipe.transform(this.date, 'yyyy-MM-dd');
     return this.date;
   }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
 
   getDocumentDefinition() {
     sessionStorage.setItem('memo', JSON.stringify(this.memo));
@@ -50,19 +80,46 @@ export class MemorandumsComponent implements OnInit {
           ,fit: [50, 50]
         } */,
         {
+<<<<<<< HEAD
           text: 'Instituto Superior Tecnológico de Turismo y Patrimonio Yavirac',
+=======
+<<<<<<< HEAD
+          image: ''
+          ,fit: [50, 50]
+        },
+        {
+          text: 'Instituto Superior Tecnológico de Turismo y Patrimonio Yavirac',
+=======
+          text: 'Instituto el cual pertenece el usuario',
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
           
           style : 'titulo'
         },
         {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
           text: `MEMORANDUM  `,
           style : 'titulo'
         },
         {
           text: `"ISTBJ-DS-001-2020"`,
+<<<<<<< HEAD
           style : 'titulo'
         },
         
+=======
+          style : 'titulo'
+        },
+        
+=======
+          text: `MEMORANDUM "ISTBJ-DS-001-2020" `,
+          style : 'titulo'
+        },
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
         {
           columns: [
             [
@@ -79,7 +136,15 @@ export class MemorandumsComponent implements OnInit {
               style: 'cabecera'
             },
             {
+<<<<<<< HEAD
               text: `Fecha: ${this.date}`,
+=======
+<<<<<<< HEAD
+              text: `Fecha: ${this.date}`,
+=======
+              text: `Fecha: ${this.memo.fecha}`,
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
               style: 'cabecera'
             }
             ]
@@ -111,7 +176,15 @@ export class MemorandumsComponent implements OnInit {
       ],
         styles: {
           titulo: {
+<<<<<<< HEAD
             fontSize: 12,
+=======
+<<<<<<< HEAD
+            fontSize: 12,
+=======
+            fontSize: 14,
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
             bold: true,
             margin: [0, 20, 0, 20],
             upperCase: true ,
@@ -155,4 +228,12 @@ export class MemorandumsComponent implements OnInit {
     sessionStorage.removeItem('memo');
   }
 
+<<<<<<< HEAD
 }
+=======
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
+>>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
