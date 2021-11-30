@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "ng build --prod --base-href=/AngularApp-Deploy/"
   },
   "private": true,
   "dependencies": {
@@ -28,10 +29,6 @@
     "@ng-bootstrap/ng-bootstrap": "^6.0.2",
     "@types/pg": "^7.14.3",
     "angular-ng-autocomplete": "^2.0.1",
-<<<<<<< HEAD
-    "bootstrap": "^4.4.1",
-=======
->>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
     "eva-icons": "^1.1.2",
     "pdfmake": "^0.1.65",
     "pg": "^7.18.2",
