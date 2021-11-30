@@ -178,7 +178,6 @@ this.generarCarrera();
         //console.log('Carrera_:', this.codigoUsuarioGenerado);
       }
       if (n == 1) {
-        //console.log('pertenece a 1 instituto!');
         //console.log('CARRERA_ID:',carrera_id);
         if (this.carrera_id == 1) {
           this.codigoUsuarioGenerado = this.codigoUsuarioGenerado + 'DSBJ';
