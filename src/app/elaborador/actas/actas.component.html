@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-<div class="container-fluid">
-    <nav class="navbar navbar-expand navbar-light bg-primary d-flex justify-content-between">
-      <div class="navbar-brand mb-0 h1 text-white">ACTA - YAVIRAC</div>
-<<<<<<< HEAD
-      <button mat-button mat-raised-button routerLink="/elaborador">REGRESAR</button>
-=======
-=======
 
 <div class="container-fluid">
     <nav class="navbar navbar-expand navbar-light bg-primary d-flex justify-content-between">
+      <div class="navbar-brand mb-0 h1 text-white">ACTA - YAVIRAC</div>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand navbar-light bg-primary d-flex justify-content-between">
       <div class="navbar-brand mb-0 h1 text-white">Actas - YAVIRAC</div>
->>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
->>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
     </nav>
     <form #actaForm="ngForm">
       <div class="row">
@@ -22,14 +15,8 @@
               <h4 class="card-title d-flex">
                 Título
               </h4>
-<<<<<<< HEAD
-              <input type="text" class="form-control" name="titulo" [(ngModel)]="acta.titulo" #titulo="ngModel"
-              onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="JUNTA ACADÉMICA CARRERA "  
-              [ngClass]="{'is-invalid': titulo.invalid && (titulo.touched || actaForm.submitted) }" required>
-=======
               <input type="text" class="form-control" name="titulo" [(ngModel)]="acta.titulo" #Titulo="ngModel"
               onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="JUNTA ACADÉMICA CARRERA "  required>
->>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
             </div>
           </div>
           <!-- cuerpo -->
@@ -46,12 +33,7 @@
                 <div class="col-md-12" >
                   <div class="form-group">
                     <textarea class="form-control" name="inicio" [(ngModel)]="acta.inicio" #Inicio="ngModel" rows="6"
-<<<<<<< HEAD
-                        placeholder="Inicio del documento" 
-                        [ngClass]="{'is-invalid': Inicio.invalid && (Inicio.touched || actaForm.submitted) }" required></textarea>
-=======
                         placeholder="Inicio del documento"></textarea>
->>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
                   </div>
                 </div>
               </div>
@@ -72,12 +54,7 @@
                 <div class="col-md-12" *ngFor="let o of acta.ordenDelDia; let i=index">
                   <div class="form-group">
                     <input type="text" class="form-control" name="orden{{i}}" [(ngModel)]="o.orden"
-<<<<<<< HEAD
-                     #Orden="ngModel" placeholder="Orden del dia"  
-                     [ngClass]="{'is-invalid': Orden.invalid && (Orden.touched || actaForm.submitted) }" required>
-=======
                      #Orden="ngModel" placeholder="Orden del dia"  required>
->>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
                   </div>
                 </div>
               </div>
@@ -97,12 +74,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <textarea class="form-control" name="desarrollo" [(ngModel)]="acta.desarrollo" #Desarrollo="ngModel" rows="8"
-<<<<<<< HEAD
-                        placeholder="Desarrollo del documento"
-                        [ngClass]="{'is-invalid': Desarrollo.invalid && (Desarrollo.touched || actaForm.submitted) }" required></textarea>
-=======
                         placeholder="Desarrollo del documento"></textarea>
->>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
                   </div>
                 </div>
               </div>
@@ -122,12 +94,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <input type="text" class="form-control" name="despedida" [(ngModel)]="acta.despedida" #Despedida="ngModel"
-<<<<<<< HEAD
-                  placeholder="Saludos Cordiales," 
-                  [ngClass]="{'is-invalid': Despedida.invalid && (Despedida.touched || actaForm.submitted) }" required>
-=======
                   placeholder="Saludos Cordiales," required>
->>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
                 </div>
               </div>
             </div>
@@ -161,8 +128,4 @@
       </div>
       </div>
     </form>
-<<<<<<< HEAD
   </div>
-=======
-  </div>
->>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f

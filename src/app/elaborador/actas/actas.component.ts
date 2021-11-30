@@ -17,30 +17,9 @@ pdfMake.vfs=pdfFonts.pdfMake.vfs
 export class ActasComponent implements OnInit {
   
   acta = new Actas();
-<<<<<<< HEAD
-  fecha:any;
-  dateS:any;
-  fechaS:any;
-  usuario:UserData;
-  dialog: any;
-  actaCodigoUsuario:string;
-  codigoGet:string;
-  numeroActual:number;
-  numeroSiguiente:number;
-  listaDocumentos:any[]=[];
-  constructor(private formBuilder:FormBuilder,
-    public datepipe:DatePipe,
-    public service: ServicioService,
-    public router:Router) {
-=======
 
   constructor() {
-<<<<<<< HEAD
 
->>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
-    
-=======
->>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
     this.acta = JSON.parse(sessionStorage.getItem('acta')) || new Actas();
     if (!this.acta.ordenDelDia || this.acta.ordenDelDia.length === 0) {
       this.acta.ordenDelDia = [];
@@ -339,8 +318,4 @@ obtenerFechaS(){
     }
   }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f

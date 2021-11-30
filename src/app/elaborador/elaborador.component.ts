@@ -1,17 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { ServicioService } from '../servicio.service';
-import { Router } from '@angular/router';
-=======
-<<<<<<< HEAD
-=======
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { Resume, Experience, Education, Skill } from '../models/resume'
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
->>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
->>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
 
 @Component({
   selector: 'app-elaborador',
@@ -20,13 +12,8 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 })
 export class ElaboradorComponent implements OnInit {
 
-<<<<<<< HEAD
   constructor(public service: ServicioService,
     public router: Router) { 
-=======
-<<<<<<< HEAD
-  constructor() { 
-=======
   resume = new Resume();
 
   degrees = ['Básico', 'Inicial','Bachillerato', 'Estudios Superiores'];
@@ -47,7 +34,6 @@ export class ElaboradorComponent implements OnInit {
     }
 
     
->>>>>>> 6e05be222768b5e8fc47ba880202965338b06f89
   }
 
   ngOnInit() {
@@ -199,15 +185,11 @@ export class ElaboradorComponent implements OnInit {
           }
         }
     };
->>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
   }
 
   ngOnInit() {
   }
 
-<<<<<<< HEAD
- 
-=======
 
   getProfilePicObject() {
     if (this.resume.profilePic) {
@@ -239,5 +221,4 @@ export class ElaboradorComponent implements OnInit {
     this.resume.skills.push(new Skill());
   }
 
->>>>>>> 5c2f9c5d12195cb0498c7c0d337f6a618a339f6f
 }
