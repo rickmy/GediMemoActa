@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { ServicioService } from './servicio.service';
 import { UserData } from './models/userData';
 import { User } from './models/user';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,47 +22,21 @@ public user: User = {
   correo: "",
   clave: ""
 };
-/*   navigateVisualizador(){
-    this.router.navigate(['visualizador']);
-    console.log("navigateVisualizador");
-  }
-  navigateElaborador(){
-  this.router.navigate(['elaborador']);
-  console.log("navigateElaborador");
-} */
-
 ngOnInit() {
- 
-
+ //1000ms=1second
+  setTimeout(() => {
+    window.location.reload();
+    //console.log('Page reload!!');
+  }, 600000);//reloading every 10 minutes
 }
-
-/* reloadStorage(){
-  return this.service.loginUser(this.usuario)
-  .subscribe(data => {
-    this.service.setUser(data[0]);
-    let token = data[0].id;
-    this.service.setToken(token);
-    console.log('postUsuario_:', data[0].id),
-    this.router.navigate(["/visualizador"]);
-    location.reload();
-    },
-    //this.navigateToLogin()
-      error => {
-       alert('Credenciales Incorrectas');
-       //console.log('error_postUsuario_:', error)
+onActivate(event) {
+  let scrollToTop = window.setInterval(() => {
+      let pos = window.pageYOffset;
+      if (pos > 0) {
+          window.scrollTo(0, pos - 100); // how far to scroll on each step
+      } else {
+          window.clearInterval(scrollToTop);
       }
-  );
- } */
-
-
-confirmarCodigo(){
-
-  
-
+  }, 40);
 }
-
-
-
-
-
 }

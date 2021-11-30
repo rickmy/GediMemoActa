@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import pdfMake from 'pdfmake/build/pdfmake';
-import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { Resume, Experience, Education, Skill } from '../models/resume'
-
-pdfMake.vfs = pdfFonts.pdfMake.vfs;
+import { ServicioService } from '../servicio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-elaborador',
@@ -11,214 +8,126 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
   styleUrls: ['./elaborador.component.css']
 })
 export class ElaboradorComponent implements OnInit {
-
+  info: boolean;
+  Sol: boolean;
+  Act: boolean;
+  Actr: boolean;
+  Mem: boolean;
+  Hdv: boolean;
+  Ofi: boolean;
+  headerInfo:boolean;
+  loading:boolean;
+  nSolicitudes;
+  nActasB;
+  nActasR;
+  nOficios;
+  nHojasDeVida;
+  nMemorandos;
+  nDocumentos;
+  docs;
+  idDoc;
+  user;
+  idUser;
+  listaSol = [];
+  listaActB = [];
+  listaActR = [];
+  listaOfi = [];
+  listaHdv = [];
+  listaMem = [];
   constructor(public service: ServicioService,
-    public router: Router) { 
-  resume = new Resume();
-
-  degrees = ['Básico', 'Inicial','Bachillerato', 'Estudios Superiores'];
-
-  constructor() { 
-    this.resume = JSON.parse(sessionStorage.getItem('resume')) || new Resume();
-    if (!this.resume.experiences || this.resume.experiences.length === 0) {
-      this.resume.experiences = [];
-      this.resume.experiences.push(new Experience());
-    }
-    if (!this.resume.educations || this.resume.educations.length === 0) {
-      this.resume.educations = [];
-      this.resume.educations.push(new Education());
-    }
-    if (!this.resume.skills || this.resume.skills.length === 0) {
-      this.resume.skills = [];
-      this.resume.skills.push(new Skill());
-    }
-
-    
+    public router: Router) {
   }
 
   ngOnInit() {
+    this.getDocsInfo();
+    this.getLocalStorageData();
+    this.nSolicitudes = 0;
+    this.nActasB = 0;
+    this.nActasR = 0;
+    this.nOficios = 0;
+    this.nHojasDeVida = 0;
+    this.nMemorandos = 0;
+    this.nDocumentos = 0;
+    this.loading=true;
+    setTimeout(() => {
+      this.headerInfo=true;
+      this.loading=false;
+    }, 2000);//past 2 second
+    setTimeout(() => {
+      this.headerInfo=false;
+    }, 8000);//past 8 second
   }
-
-  agregarMensaje(){
-    console.log('Hola Elaborador!°');
-  }
-
-  //Métodos a usar
-  addExperience() {
-    this.resume.experiences.push(new Experience());
-  }
-  addEducation() {
-    this.resume.educations.push(new Education());
-  }
-  generatePdf(action = 'open') {
-    const documentDefinition = this.getDocumentDefinition();
-    switch (action) {
-      case 'open': pdfMake.createPdf(documentDefinition).open(); break;
-      case 'print': pdfMake.createPdf(documentDefinition).print(); break;
-      case 'download': pdfMake.createPdf(documentDefinition).download(); break;
-      default: pdfMake.createPdf(documentDefinition).open(); break;
+  getLocalStorageData() {
+    let jsonUser = localStorage.getItem('currentUser');
+    this.user = JSON.parse(jsonUser);
+    this.idUser = this.user.id;
+    //console.log(this.idUser)
+    let name = this.user.name.toLowerCase();
+    var separador = " ";    
+    var arrayNombre = name.split(separador);
+    var nombre = arrayNombre[1];
+    var apellido = arrayNombre[0];
+    if (nombre&&apellido) {
+    nombre = nombre.charAt(0).toUpperCase() + nombre.slice(1);
+    apellido = apellido.charAt(0).toUpperCase() + apellido.slice(1);
+    this.user.name = nombre +' '+ apellido;
+    }
+    if (!nombre&&apellido) {
+      apellido='';
+      nombre=arrayNombre[0];
+      nombre = nombre.charAt(0).toUpperCase() + nombre.slice(1);
+      this.user.name = nombre;
     }
   }
-  resetForm() {
-    this.resume = new Resume();
-  }
-  getDocumentDefinition() {
-    sessionStorage.setItem('resume', JSON.stringify(this.resume));
-    return {
-      content: [
-        {
-          text: 'Hoja de Vida',
-          bold: true,
-          fontSize: 20,
-          alignment: 'center',
-          margin: [0, 0, 0, 20]
-        },
-        {
-          columns: [
-            [{
-              text: this.resume.name,
-              style: 'name'
-            },
-            {
-              text: this.resume.address
-            },
-            {
-              text: 'Email : ' + this.resume.email,
-            },
-            {
-              text: 'Teléfono : ' + this.resume.contactNo,
-            },
-            {
-              text: 'Usuario GitHub: ' + this.resume.socialProfile,
-              link: this.resume.socialProfile,
-              color: 'green',
+  getDocsInfo() {
+    return this.service.getDocumentos()
+      .subscribe(datos => {
+        this.docs = datos;
+        for (let i = 0; i < this.docs.length; i++) {
+          const documento = this.docs[i];
+          const idUsuario = this.docs[i].idUsuario;
+          const codigoDoc = this.docs[i].codigo_documento;
+          this.idDoc = idUsuario;
+          if (this.idDoc == this.idUser) {
+            if (codigoDoc.includes('SOL')) {
+              this.nSolicitudes++;
+              this.nDocumentos++;
             }
-            ],
-            [
-              this.getProfilePicObject()
-            ]
-          ]
-        },
-        {
-          text: 'Habilidades',
-          style: 'header'
-        },
-        {
-          columns : [
-            {
-              ul : [
-                ...this.resume.skills.filter((value, index) => index % 3 === 0).map(s => s.value)
-              ]
-            },
-            {
-              ul : [
-                ...this.resume.skills.filter((value, index) => index % 3 === 1).map(s => s.value)
-              ]
-            },
-            {
-              ul : [
-                ...this.resume.skills.filter((value, index) => index % 3 === 2).map(s => s.value)
-              ]
+            if (codigoDoc.includes('ACTB')) {
+              this.nActasB++;
+              this.nDocumentos++;
             }
-          ]
-        },
-        {
-          text: 'Experiencia',
-          style: 'header'
-        },
-        this.getExperienceObject(this.resume.experiences),
-        {
-          text: 'Educación',
-          style: 'header'
-        },
-        this.getEducationObject(this.resume.educations),
-        {
-          text: 'Otros Detalles',
-          style: 'header'
-        },
-        {
-          text: this.resume.otherDetails
-        },
-        {
-          text: 'Firma',
-          style: 'sign'
-        },
-        {
-          columns : [
-              { qr: this.resume.name + ', Teléfono de contacto : ' + this.resume.contactNo, fit : 100 },
-              {
-              text: `(${this.resume.name})`,
-              alignment: 'right',
-              }
-          ]
-        }
-      ],
-      info: {
-        title: this.resume.name + '_HOJA DE VIDA',
-        author: this.resume.name,
-        subject: 'RESUME',
-        keywords: 'RESUME, ONLINE RESUME',
-      },
-        styles: {
-          header: {
-            fontSize: 18,
-            bold: true,
-            margin: [0, 20, 0, 10],
-            decoration: 'underline'
-          },
-          name: {
-            fontSize: 16,
-            bold: true
-          },
-          jobTitle: {
-            fontSize: 14,
-            bold: true,
-            italics: true
-          },
-          sign: {
-            margin: [0, 50, 0, 10],
-            alignment: 'right',
-            italics: true
-          },
-          tableHeader: {
-            bold: true,
+            if (codigoDoc.includes('ACTR')) {
+              this.nActasR++;
+              this.nDocumentos++;
+            }
+            if (codigoDoc.includes('OFI')) {
+              this.nOficios++;
+              this.nDocumentos++;
+            }
+            if (codigoDoc.includes('HDV')) {
+              this.nHojasDeVida++;
+              this.nDocumentos++;
+            }
+            if (codigoDoc.includes('MEM')) {
+              this.nMemorandos++;
+              this.nDocumentos++;
+            }
           }
         }
-    };
+      },
+        error => {
+        }
+      )
   }
+  showHeaderInfo(){
 
-  ngOnInit() {
-  }
-
-
-  getProfilePicObject() {
-    if (this.resume.profilePic) {
-      return {
-        image: this.resume.profilePic ,
-        width: 75,
-        alignment : 'right'
-      };
+    if (this.headerInfo) {
+      this.headerInfo = false;
+    } else {
+      this.headerInfo = true;
     }
-    return null;
-  }
-
-  fileChanged(e) {
-    const file = e.target.files[0];
-    this.getBase64(file);
-  }
-  getBase64(file) {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      console.log(reader.result);
-      this.resume.profilePic = reader.result as string;
-    };
-    reader.onerror = (error) => {
-      console.log('Error: ', error);
-    };
-  }
-  addSkill() {
-    this.resume.skills.push(new Skill());
+    
   }
 
 }
