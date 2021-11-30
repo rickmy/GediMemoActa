@@ -26,6 +26,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: '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'
           BRANCH: gh-pages
-          FOLDER: dist/demo-angular-cicd
+          FOLDER: dist
