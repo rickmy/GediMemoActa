@@ -28,4 +28,4 @@ jobs:
         with:
           GITHUB_TOKEN: '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'
           BRANCH: gh-pages
-          FOLDER: dist
+          FOLDER: dist/demo-angular-cicd
